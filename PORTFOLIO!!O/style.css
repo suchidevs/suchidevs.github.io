@@ -1,0 +1,562 @@
+/* ==========================================
+   GLOBAL SETTINGS (Applies to the whole site)
+   ========================================== */
+
+/* 1. Import the 'Inter' font directly from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;600&display=swap');
+
+/* 2. The Universal Reset (Removes default browser margins) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. Base Body Styling */
+body {
+    background-color: #000000;
+    color: #ffffff; /* Sets default text to white so we can see it on the black background */
+    font-family: 'Inter', sans-serif; /* Applies your Figma font */
+    overflow-x: hidden; /* Prevents accidental horizontal scrolling */
+}
+
+/* Let's make sure links don't have that ugly blue underline */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================
+   NAVIGATION
+   Using your Figma flexbox spacing and colors
+   ========================================== */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 89px; /* Exact Figma spacing */
+    height: 248px;     /* Exact Figma height */
+}
+
+/* Ensuring the logo scales nicely */
+.portfolio-logo img {
+    max-height: 80px; 
+    width: auto;
+}
+
+.about {
+    font-weight: 200;       /* Figma exact */
+    font-size: 15px;        /* Figma exact */
+    color: #828282;         /* Figma exact */
+    text-transform: lowercase;
+}
+
+/* Add a subtle hover effect for a high-end feel */
+.about:hover {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+/* ==========================================
+   MAIN CONTENT (The Staggered Previews)
+   ========================================== */
+.preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4%; /* Gives them breathing room */
+    padding: 0 5%;
+    margin-top: 50px;
+}
+
+.preview-box {
+    width: 28%; /* Keeps columns flexible on any screen size */
+    height: 720px; /* Exact Figma height */
+    border-radius: 8px; /* Exact Figma curves */
+    overflow: hidden; /* Keeps video trapped inside the curved borders */
+}
+
+/* This is how we stagger the middle column safely! */
+.micro-drama-preview-1 {
+    transform: translateY(150px); 
+}
+
+/* Make sure the videos fill the boxes perfectly without stretching */
+.preview-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Make them interactive when hovered */
+.preview-box:hover {
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+}
+.micro-drama-preview-1:hover {
+    transform: translateY(150px) scale(1.02); /* Keeps the stagger but adds the zoom */
+}
+
+/* ==========================================
+   THE GIANT TYPOGRAPHY (Perfectly Centered)
+   ========================================== */
+.section-heading {
+    display: block;
+    text-align: center;
+    margin-top: 300px; 
+    margin-bottom: 200px;
+    
+    white-space: nowrap; 
+    font-size: clamp(24px, 5vw, 64px); 
+    font-weight: 100;
+    
+    /* Your letter spacing */
+    letter-spacing: 1.5em; 
+    
+    /* This pulls the trailing letter-spacing gap back 
+       so the optical center is dead-on accurate! */
+    margin-right: -1.5em; 
+    
+    color: #A3A3A3;
+}
+
+.section-heading:hover {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.section-heading:hover {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.navigation-footer {
+    padding: 40px 80px; 
+}
+
+.linkedin-text {
+    font-weight: 200;       
+    font-size: 15px;        
+    color: #828282;         
+    text-transform: lowercase; 
+    transition: color 0.3s ease;
+}
+
+/* Adds the crisp white hover effect */
+.linkedin-text:hover {
+    color: #ffffff;
+}
+
+.linkedin-icon img:hover {
+    opacity: 1;
+}
+
+/* ==========================================
+   MICRODRAMAS PAGE STYLING
+   ========================================== */
+
+.microdrama-main {
+    padding: 0 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* The 3 Vertical Video Grid */
+.microdrama-videos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 33px; /* Exact Figma gap */
+    margin-top: 40px;
+}
+
+.microdrama-card {
+    width: 405px;  /* Exact Figma width */
+    height: 720px; /* Exact Figma height */
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.microdrama-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ensures static images fill the vertical internship cards perfectly */
+.microdrama-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Section Stacked Below */
+.microdrama-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 750px; /* Exact Figma constraint */
+    margin-top: 80px;
+    margin-bottom: 150px;
+}
+
+.microdrama-title {
+    font-weight: 100;
+    font-size: 64px;
+    line-height: 77px;
+    color: #F2F2F7; /* Exact Figma text color */
+    margin-left: -4px; 
+}
+
+.microdrama-desc {
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 150%;
+    color: #F2F2F7;
+}
+
+/* ==========================================
+   INTERNSHIP DETAIL PAGES (Split Layout)
+   ========================================== */
+
+.internship-detail-main {
+    padding: 0 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.internship-split-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 79px; 
+    margin-bottom: 150px;
+    align-items: flex-start; 
+}
+
+.internship-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.internship-images {
+    display: flex;
+    flex-direction: row;
+    gap: 33px; 
+}
+
+.internship-text {
+    display: flex;
+    flex-direction: column;
+    width: 396px; 
+    flex-shrink: 0; 
+    gap: 20px;
+}
+
+.android-nda p {
+    font-weight: 200;
+    font-size: 13px; 
+    line-height: 150%;
+    color: #F2F2F7;
+    opacity: 0.5; 
+}
+
+/* ==========================================
+   NDA HYPERLINK (Minimalist Glow)
+   ========================================== */
+.nda-link {
+    font-weight: 400; 
+    color: #F2F2F7; 
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(242, 242, 247, 0.3); 
+}
+
+.nda-link:hover {
+    border-bottom-color: #F2F2F7;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================
+   SAMSUNG PAGE SPECIFICS
+   ========================================== */
+
+/* The wide 16:9 cinematic image card */
+.samsung-image-card {
+    width: 720px;
+    height: 405px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.samsung-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slightly wider text column for the Samsung layout */
+.samsung-text-col {
+    display: flex;
+    flex-direction: column;
+    width: 515px; /* Exact Figma width */
+    flex-shrink: 0; 
+    gap: 20px;
+}
+
+/* ==========================================
+   INTUIT PAGE SPECIFICS
+   ========================================== */
+
+/* Stacks the two wide cinematic videos vertically */
+.intuit-image-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 33px; /* Exact Figma gap between the two videos */
+}
+
+/* The wide 16:9 cinematic video cards */
+.intuit-image-card {
+    width: 720px;
+    height: 405px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Ensures both images (if you ever use them) and videos fill the card cleanly */
+.intuit-image-card img, 
+.intuit-image-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Exact text column sizing for the Intuit layout */
+.intuit-text-col {
+    display: flex;
+    flex-direction: column;
+    width: 506px; /* Exact Figma width */
+    flex-shrink: 0; 
+    gap: 20px;
+}
+
+/* ==========================================
+   ABOUT PAGE SPECIFICS
+   ========================================== */
+
+.about-main {
+    padding: 0 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-top: 10px; /* Aligns with the Figma top placement */
+}
+
+/* Flexbox to separate the left text block from the right image block */
+.about-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 150px;
+}
+
+/* --- LEFT COLUMN (Text) --- */
+.about-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Space between Origin Story and the lists below */
+}
+
+.origin-story {
+    width: 518px; /* Exact Figma width */
+}
+
+/* The grid holding Experience/Education next to Recognition */
+.about-details-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 80px; /* Space between the two text columns */
+}
+
+/* Left side of the sub-grid */
+.details-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 70px; /* Space between Experience and Education */
+    width: 326px; /* Exact Figma width */
+}
+
+/* Right side of the sub-grid */
+.details-right-col {
+    display: flex;
+    flex-direction: column;
+    width: 298px; /* Exact Figma width */
+}
+
+/* Typography specifics for the About page */
+.about-heading {
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.about-desc, .about-list {
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 120%; /* Slightly tightened to match your layout flow */
+    color: #F2F2F7;
+}
+
+/* --- RIGHT COLUMN (Image) --- */
+.about-profile-image {
+    width: 508px; /* Exact Figma width */
+    height: 657px; /* Exact Figma height */
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.about-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS (Auto-Stacking & Scrolling)
+   ========================================== */
+@media screen and (max-width: 900px) {
+    
+    /* Global Container Adjustments */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .navigation {
+        padding: 0 20px;
+        height: auto;
+        min-height: 120px;
+        gap: 20px;
+    }
+
+    /* Home Page Preview Stack */
+    .preview-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .preview-box {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 9/16;
+    }
+
+    .micro-drama-preview-1 {
+        transform: none; /* Removes desktop stagger on mobile for readability */
+    }
+
+    .micro-drama-preview-1:hover {
+        transform: scale(1.02);
+    }
+
+    /* Internship Listing Page */
+    .microdrama-videos {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .microdrama-card {
+        width: 100%;
+        max-width: 405px;
+        height: auto;
+        aspect-ratio: 9/16;
+    }
+
+    /* Internship Detail Split Layouts (Android, Samsung, Intuit) */
+    .internship-detail-main {
+        padding: 0 20px;
+        margin-top: 40px;
+    }
+
+    .internship-split-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .internship-images, 
+    .intuit-image-stack {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* Fluid sizing for project media cards on mobile */
+    .internship-left-col .microdrama-card {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 9/16;
+    }
+
+    .samsung-image-card, 
+    .intuit-image-card {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16/9;
+    }
+
+    .internship-text, 
+    .samsung-text-col, 
+    .intuit-text-col {
+        width: 100% !important;
+    }
+
+    /* About Page Layout */
+    .about-main {
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+
+    .about-layout {
+        flex-direction: column-reverse; /* Moves the portrait below the text or vice versa */
+        gap: 50px;
+        margin-bottom: 80px;
+    }
+
+    .about-text-content {
+        width: 100%;
+        gap: 50px;
+    }
+
+    .origin-story, 
+    .details-left-col, 
+    .details-right-col {
+        width: 100% !important;
+    }
+
+    .about-details-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .about-profile-image {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4/5;
+    }
+    
+    .navigation-footer {
+        padding: 40px 20px;
+    }
+}
