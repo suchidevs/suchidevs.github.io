@@ -136,27 +136,26 @@ a {
 }
 
 /* ==========================================
-   CINEMATIC GLOWING LINE (DUNE AESTHETIC)
+   CINEMATIC GLOWING LINE (STARK WHITE)
    ========================================== */
 .cinematic-line {
     /* Resets default browser styles */
     border: 0;
     height: 1px;
     
-    /* The Dune warm gold fade (fades out at the edges) */
-    background: linear-gradient(90deg, rgba(235, 180, 110, 0) 0%, rgba(235, 180, 110, 1) 50%, rgba(235, 180, 110, 0) 100%);
+    /* The stark white fade (fades out at the edges) */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     
-    /* The Dune warm gold glow */
+    /* The crisp white glow */
     box-shadow: 
-        0 0 10px rgba(235, 180, 110, 0.7), 
-        0 0 20px rgba(235, 180, 110, 0.3);
+        0 0 10px rgba(255, 255, 255, 0.7), 
+        0 0 20px rgba(255, 255, 255, 0.3);
     
     /* 
        SPACING CONTROL: 
-       margin-top pushes the line away from the videos.
-       margin-bottom pushes the "INTERNSHIP" title lower.
+       Increased to 300px to completely clear the 150px drop of the middle video!
     */
-    margin-top: 150px;
+    margin-top: 300px;
     margin-bottom: 50px;
     
     /* Keeps it minimalist and perfectly centered */
