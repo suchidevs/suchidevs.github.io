@@ -155,7 +155,7 @@ a {
        SPACING CONTROL: 
        Increased to 350px to completely clear the 150px drop of the middle video!
     */
-    margin-top: 350px;
+    margin-top: 300px;
     margin-bottom: 50px;
     
     /* Keeps it minimalist and perfectly centered */
@@ -171,7 +171,7 @@ a {
 .section-heading {
     display: block;
     text-align: center;
-    margin-top: 200px; 
+    margin-top: 0px; 
     margin-bottom: 200px;
     
     white-space: nowrap; 
