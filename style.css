@@ -668,3 +668,134 @@ a {
         padding: 40px 20px;
     }
 }
+
+/* ==========================================
+   UPDATED NAVIGATION LOGIC
+   ========================================== */
+.items {
+    display: flex;
+    gap: 48px;
+}
+
+.nav-link {
+    font-weight: 200;
+    font-size: 15px;
+    color: #828282;
+    text-transform: lowercase;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff; /* Bright white for hover and active page */
+}
+
+/* ==========================================
+   LONG FORM PAGE STYLING
+   ========================================== */
+.longform-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px; 
+    padding: 80px 80px 160px 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.film-section {
+    display: flex;
+    flex-direction: column;
+    gap: 33px; 
+    width: 100%;
+    max-width: 1278px; 
+}
+
+.film-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: -4px; /* Pulls text left slightly to align optically */
+}
+
+.film-title {
+    font-weight: 100;
+    font-size: 64px;
+    line-height: 1.1;
+    color: #F2F2F7;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.film-role {
+    font-weight: 200;
+    font-size: 15px;
+    color: #F2F2F7;
+}
+
+/* --- THE ANAMORPHIC CONTAINER --- */
+.anamorphic-container {
+    width: 100%;
+    aspect-ratio: 1278 / 544; /* Prestige Widescreen */
+    background-color: #0a0a0a;
+    border-radius: 8px; 
+    overflow: hidden; 
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.anamorphic-container:hover {
+    transform: scale(1.01); /* Subtle lift on hover */
+}
+
+.loop-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.5s ease; /* Fades out smoothly when clicked */
+}
+
+.vimeo-embed {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Keeps Vimeo at native shape */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centers inside the anamorphic box */
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none; /* Can't click until active */
+    transition: opacity 0.5s ease;
+}
+
+/* --- CLICK-TO-PLAY STATE TRIGGERS --- */
+.anamorphic-container.is-playing .vimeo-embed {
+    opacity: 1;
+    pointer-events: auto;
+}
+.anamorphic-container.is-playing .loop-preview {
+    opacity: 0; /* Hides the GIF */
+}
+
+/* ==========================================
+   LONG FORM MOBILE OVERRIDES
+   ========================================== */
+@media screen and (max-width: 900px) {
+    .longform-gallery {
+        padding: 40px 20px 80px 20px;
+        gap: 80px;
+    }
+    
+    .film-title {
+        font-size: 36px;
+    }
+    
+    .anamorphic-container {
+        /* Reverts back to standard 16:9 on phones so it isn't too tiny */
+        aspect-ratio: 16 / 9; 
+    }
+}
