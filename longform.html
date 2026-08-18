@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suchi Gupta | Long Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
 
+    <!-- NAVIGATION -->
+    <header class="navigation">
+        <a href="index.html" class="portfolio-logo">
+            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Gupta Logo">
+        </a>
+        
+        <nav class="items">
+            <a href="index.html" class="nav-link">work</a>
+            <a href="longform.html" class="nav-link active">long form</a>
+            <a href="about.html" class="nav-link">about</a>
+        </nav>
+    </header>
+
+    <!-- LONG FORM GALLERY -->
+    <main class="longform-gallery">
+        
+        <!-- GUILTY OF LOVE -->
+        <section class="film-section">
+            <div class="film-text">
+                <h2 class="film-title">GUILTY OF LOVE</h2>
+                <p class="film-role">Lead Sound Design</p>
+            </div>
+            <!-- The 'onclick' triggers the Javascript at the bottom to play the video -->
+            <div class="anamorphic-container" onclick="playVideo(this)">
+                <!-- Your looping preview -->
+                <video src="portfolioassets/LongForm/guilty-loop.mp4" autoplay loop muted playsinline class="loop-preview"></video>
+                <!-- Your hidden Vimeo embed -->
+                <iframe src="https://player.vimeo.com/video/1218370439?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" class="vimeo-embed"></iframe>
+            </div>
+        </section>
+
+        <!-- ON BIRTHDAYS WE CELEBRATE -->
+        <section class="film-section">
+            <div class="film-text">
+                <h2 class="film-title">ON BIRTHDAYS WE CELEBRATE</h2>
+                <p class="film-role">AC & PA</p>
+            </div>
+            <div class="anamorphic-container" onclick="playVideo(this)">
+                <video src="portfolioassets/LongForm/birthdays-loop.mp4" autoplay loop muted playsinline class="loop-preview"></video>
+                <iframe src="https://player.vimeo.com/video/1218375415?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" class="vimeo-embed"></iframe>
+            </div>
+        </section>
+
+        <!-- TIGER -->
+        <section class="film-section">
+            <div class="film-text">
+                <h2 class="film-title">TIGER</h2>
+                <p class="film-role">Director & Writer</p>
+            </div>
+            <div class="anamorphic-container" onclick="playVideo(this)">
+                <video src="portfolioassets/LongForm/tiger-loop.mp4" autoplay loop muted playsinline class="loop-preview"></video>
+                <iframe src="https://player.vimeo.com/video/1218377575?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" class="vimeo-embed"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="navigation-footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CLICK-TO-PLAY SCRIPT -->
+    <script>
+        function playVideo(container) {
+            // If it's already playing, do nothing
+            if (container.classList.contains('is-playing')) return;
+            
+            // Trigger the CSS transitions to hide the GIF and reveal the iframe
+            container.classList.add('is-playing');
+            
+            // Grab the iframe inside this specific container
+            const iframe = container.querySelector('.vimeo-embed');
+            let src = iframe.getAttribute('src');
+            
+            // Force Vimeo to auto-play by appending the query string
+            if (src && !src.includes('autoplay=1')) {
+                src += src.includes('?') ? '&autoplay=1' : '?autoplay=1';
+                iframe.setAttribute('src', src);
+            }
+        }
+    </script>
+
+</body>
+</html>
