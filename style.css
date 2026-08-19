@@ -816,9 +816,9 @@ a {
 
 .hamburger-menu span {
     width: 30px;
-    height: 2px;
+    height: 1px; /* Thinned out to match your lightweight font */
     background-color: #ffffff;
-    border-radius: 2px;
+    border-radius: 0; /* Removes the rounded edges for a sharper, cleaner look */
 }
 
 /* 2. Setup the Close Button (Hidden on Desktop) */
