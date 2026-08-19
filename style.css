@@ -735,7 +735,7 @@ a {
 /* --- THE ANAMORPHIC CONTAINER --- */
 .anamorphic-container {
     width: 100%;
-    aspect-ratio: 1278 / 544; /* Prestige Widescreen */
+    aspect-ratio: 16 / 9; /* Killed the anamorphic crop, back to standard */
     background-color: #0a0a0a;
     border-radius: 8px; 
     overflow: hidden; 
