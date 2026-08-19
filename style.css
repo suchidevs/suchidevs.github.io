@@ -800,3 +800,88 @@ a {
         aspect-ratio: 16 / 9; 
     }
 }
+
+/* ==========================================
+   HAMBURGER MENU & MOBILE NAV OVERLAY
+   ========================================== */
+
+/* 1. Setup the Hamburger Lines (Hidden on Desktop) */
+.hamburger-menu {
+    display: none; /* Invisible on big screens */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 100; 
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* 2. Setup the Close Button (Hidden on Desktop) */
+.close-btn {
+    display: none; 
+}
+
+/* ==========================================
+   MOBILE OVERRIDES FOR THE MENU
+   ========================================== */
+@media screen and (max-width: 900px) {
+    /* Show the hamburger icon */
+    .hamburger-menu {
+        display: flex; 
+    }
+
+    /* Transform the nav links into a full-screen black overlay */
+    .items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.98); /* 98% opacity black */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px; /* Big vertical spacing between links */
+        z-index: 999; /* Forces it to the absolute top layer */
+        
+        /* Hide it initially with a smooth fade */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    /* The class the Javascript adds to trigger the fade-in */
+    .items.nav-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Make the links larger for the mobile overlay */
+    .items .nav-link {
+        font-size: 24px; 
+        font-weight: 100;
+        letter-spacing: 0.1em;
+    }
+
+    /* Style and position the X close button */
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 30px;
+        font-size: 28px;
+        font-weight: 200;
+        color: #ffffff;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .close-btn:hover {
+        color: #828282;
+    }
+}
