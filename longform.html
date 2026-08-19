@@ -14,7 +14,18 @@
             <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Gupta Logo">
         </a>
         
-        <nav class="items">
+        <!-- The Hamburger Icon (Only shows on mobile) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links (Becomes the full-screen overlay on mobile) -->
+        <nav class="items" id="nav-menu">
+            <!-- The Close 'X' Button (Only shows on mobile) -->
+            <div class="close-btn" onclick="toggleMenu()">x</div>
+            
             <a href="index.html" class="nav-link">work</a>
             <a href="longform.html" class="nav-link active">long form</a>
             <a href="about.html" class="nav-link">about</a>
@@ -72,8 +83,9 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE CLICK-TO-PLAY SCRIPT -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
+        // 1. Vimeo Click-to-Play Function
         function playVideo(container) {
             // If it's already playing, do nothing
             if (container.classList.contains('is-playing')) return;
@@ -89,6 +101,19 @@
             if (src && !src.includes('autoplay=1')) {
                 src += src.includes('?') ? '&autoplay=1' : '?autoplay=1';
                 iframe.setAttribute('src', src);
+            }
+        }
+
+        // 2. Mobile Hamburger Menu Function
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('nav-open');
+            
+            // This stops the background website from scrolling while the menu is open
+            if (navMenu.classList.contains('nav-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
             }
         }
     </script>
