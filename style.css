@@ -816,7 +816,7 @@ a {
 
 .hamburger-menu span {
     width: 30px;
-    height: 0.5px; /* Thinned out to match your lightweight font */
+    height: 1px; /* Keeping this at 1px so it doesn't blur out on older phone screens! */
     background-color: #ffffff;
     border-radius: 0; /* Removes the rounded edges for a sharper, cleaner look */
 }
@@ -870,12 +870,12 @@ a {
 
     /* Style and position the X close button */
     .close-btn {
-        display: block;
+        display: block; /* Makes it visible ONLY on mobile */
         position: absolute;
         top: 40px;
         right: 30px;
-        font-size: 28px;
-        font-weight: 200;
+        font-size: 32px; /* Bumped up slightly so it's easier to tap */
+        font-weight: 100; /* THIS makes the X razor-thin! */
         color: #ffffff;
         cursor: pointer;
         transition: 0.3s ease;
