@@ -730,6 +730,7 @@ a {
     font-weight: 200;
     font-size: 15px;
     color: #F2F2F7;
+    margin-left: 5px; /* Pushes the small text right to optically align with the big letters */
 }
 
 /* --- THE ANAMORPHIC CONTAINER --- */
