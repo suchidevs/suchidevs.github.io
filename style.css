@@ -816,7 +816,7 @@ a {
 
 .hamburger-menu span {
     width: 30px;
-    height: 1px; /* Thinned out to match your lightweight font */
+    height: 0.5px; /* Thinned out to match your lightweight font */
     background-color: #ffffff;
     border-radius: 0; /* Removes the rounded edges for a sharper, cleaner look */
 }
