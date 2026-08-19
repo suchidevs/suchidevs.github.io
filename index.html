@@ -8,30 +8,33 @@
 </head>
 <body class="home-page">
 
-    <!-- ==========================================
-         NAVIGATION
-         Features the "SUCHI" logo and minimalist "about" link
-         ========================================== -->
+  <!-- NAVIGATION -->
     <header class="navigation">
         <a href="index.html" class="portfolio-logo">
-            <!-- Ensure this points to the clear logo file we formatted earlier -->
-            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="SUCHI Logo">
+            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Gupta Logo">
         </a>
         
-        <nav class="items">
-    <!-- Add the 'active' class to the 'work' link here! -->
-    <a href="index.html" class="nav-link active">work</a>
-    <a href="longform.html" class="nav-link">long form</a>
-    <a href="about.html" class="nav-link">about</a>
-</nav>
-        
+        <!-- The Hamburger Icon (Only shows on mobile) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links (Becomes the full-screen overlay on mobile) -->
+        <nav class="items" id="nav-menu">
+            <!-- The Close 'X' Button (Only shows on mobile) -->
+            <div class="close-btn" onclick="toggleMenu()">✕</div>
+            
+            <a href="index.html" class="nav-link active">work</a>
+            <a href="longform.html" class="nav-link">long form</a>
+            <a href="about.html" class="nav-link">about</a>
+        </nav>
     </header>
 
 
     <!-- ==========================================
          MAIN CONTENT (The Staggered Previews)
-         Wrapping the videos in <a> tags so clicking 
-         the video takes you to that project's page.
          ========================================== -->
     <main>
         
@@ -74,12 +77,28 @@
     </a>
         
     </main>
+
 <!-- FOOTER -->
 <footer class="navigation-footer">
     <div class="social-icons">
         <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
     </div>
 </footer>
+
+<!-- HAMBURGER MENU SCRIPT -->
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('nav-open');
+        
+        // This stops the background website from scrolling while the menu is open
+        if (navMenu.classList.contains('nav-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+</script>
 
 </body>
 </html>
