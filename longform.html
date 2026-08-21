@@ -14,7 +14,18 @@
             <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Gupta Logo">
         </a>
         
-        <nav class="items">
+        <!-- The Hamburger Icon (Only shows on mobile) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links (Becomes the full-screen overlay on mobile) -->
+        <nav class="items" id="nav-menu">
+            <!-- The Close 'X' Button (Only shows on mobile) -->
+            <div class="close-btn" onclick="toggleMenu()">x</div>
+            
             <a href="index.html" class="nav-link">work</a>
             <a href="longform.html" class="nav-link active">long form</a>
             <a href="about.html" class="nav-link">about</a>
@@ -28,12 +39,12 @@
         <section class="film-section">
             <div class="film-text">
                 <h2 class="film-title">GUILTY OF LOVE</h2>
-                <p class="film-role">Lead Sound Design</p>
+                <p class="film-role">Sound Designer</p>
             </div>
             <!-- The 'onclick' triggers the Javascript at the bottom to play the video -->
             <div class="anamorphic-container" onclick="playVideo(this)">
                 <!-- Corrected relative path to the local MP4 loop -->
-                <video src="portfolioassets/LongForm/guilty-loop.mp4" autoplay loop muted playsinline class="loop-preview"></video>
+                <video src="portfolioassets/LongForm/guilty-loop.mov" autoplay loop muted playsinline class="loop-preview"></video>
                 <!-- Clean Vimeo embed link -->
                 <iframe src="https://player.vimeo.com/video/1218370439?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" class="vimeo-embed"></iframe>
             </div>
@@ -72,8 +83,9 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE CLICK-TO-PLAY SCRIPT -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
+        // 1. Vimeo Click-to-Play Function
         function playVideo(container) {
             // If it's already playing, do nothing
             if (container.classList.contains('is-playing')) return;
@@ -89,6 +101,19 @@
             if (src && !src.includes('autoplay=1')) {
                 src += src.includes('?') ? '&autoplay=1' : '?autoplay=1';
                 iframe.setAttribute('src', src);
+            }
+        }
+
+        // 2. Mobile Hamburger Menu Function
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('nav-open');
+            
+            // This stops the background website from scrolling while the menu is open
+            if (navMenu.classList.contains('nav-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
             }
         }
     </script>

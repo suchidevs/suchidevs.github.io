@@ -216,14 +216,6 @@ a {
     animation: interstellar-sweep 6s linear infinite;
 }
 
-/* When hovered, the animation stops and it snaps to crisp white */
-.section-heading:hover {
-    background: none;
-    -webkit-text-fill-color: #ffffff;
-    transition: 0.3s ease;
-    animation: none; 
-}
-
 /* ==========================================
    THE ANIMATION KEYFRAMES
    ========================================== */
@@ -730,6 +722,7 @@ a {
     font-weight: 200;
     font-size: 15px;
     color: #F2F2F7;
+    margin-left: 5px; /* Pushes the small text right to optically align with the big letters */
 }
 
 /* --- THE ANAMORPHIC CONTAINER --- */
@@ -797,5 +790,206 @@ a {
     .anamorphic-container {
         /* Reverts back to standard 16:9 on phones so it isn't too tiny */
         aspect-ratio: 16 / 9; 
+    }
+}
+
+/* ==========================================
+   HAMBURGER MENU & MOBILE NAV OVERLAY
+   ========================================== */
+
+/* 1. Setup the Hamburger Lines (Hidden on Desktop) */
+.hamburger-menu {
+    display: none; /* Invisible on big screens */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 100; 
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 0.5px; /* The Retina hairline trick! */
+    background-color: rgba(255, 255, 255, 0.7); /* Softens the stark white to match the font's optical weight */
+    border-radius: 0; 
+}
+
+/* 2. Setup the Close Button (Hidden on Desktop) */
+.close-btn {
+    display: none; 
+}
+
+/* ==========================================
+   MOBILE OVERRIDES FOR THE MENU
+   ========================================== */
+@media screen and (max-width: 900px) {
+    /* Show the hamburger icon */
+    .hamburger-menu {
+        display: flex; 
+    }
+
+    /* Transform the nav links into a full-screen black overlay */
+    .items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.98); /* 98% opacity black */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px; /* Big vertical spacing between links */
+        z-index: 999; /* Forces it to the absolute top layer */
+        
+        /* Hide it initially with a smooth fade */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    /* The class the Javascript adds to trigger the fade-in */
+    .items.nav-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Make the links larger for the mobile overlay */
+    .items .nav-link {
+        font-size: 24px; 
+        font-weight: 100;
+        letter-spacing: 0.1em;
+    }
+
+    /* Style and position the X close button */
+    .close-btn {
+        display: block; /* Makes it visible ONLY on mobile */
+        position: absolute;
+        top: 40px;
+        right: 30px;
+        font-size: 32px; /* Bumped up slightly so it's easier to tap */
+        font-weight: 100; /* THIS makes the X razor-thin! */
+        color: #ffffff;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .close-btn:hover {
+        color: #828282;
+    }
+}
+
+/* ==========================================
+   VERTICAL BRAND STACK (Homepage)
+   ========================================== */
+
+.brand-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px; /* Lots of breathing room between logos */
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Removes any default link underlining */
+    transition: transform 0.3s ease;
+}
+
+.brand-link:hover {
+    transform: scale(1.05); /* Very slight pop when hovered */
+}
+
+.brand-logo {
+    width: 140px; 
+    height: auto;
+    fill: #ffffff; /* Changed this to white so it shows up on your black background! */
+    margin-bottom: 12px; 
+}
+
+.brand-tag {
+    font-family: 'Inter', sans-serif; /* Matches your site font */
+    font-weight: 200; /* Extremely thin weight to match the nav */
+    font-size: 15px; /* Matches the nav and footer size */
+    color: #828282; /* Matches the exact grey from your Figma file */
+    text-transform: lowercase; /* Matches your lowercase nav aesthetic */
+    letter-spacing: normal; /* Removes the stretched spacing */
+    margin-top: 15px; /* Pushes it down slightly from the logo */
+}
+
+/* ==========================================
+   INTUIT PAGE SPECIFICS (4 Vertical TikToks)
+   ========================================== */
+
+/* The container that holds the 4 phones side-by-side */
+.intuit-tiktok-feed {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Space between each phone */
+    
+    /* Adds a sleek scrollbar if the user is on a smaller laptop screen */
+    overflow-x: auto; 
+    padding-bottom: 20px; 
+    width: 100%;
+}
+
+/* Hide the ugly default scrollbar but keep the functionality */
+.intuit-tiktok-feed::-webkit-scrollbar {
+    height: 8px;
+}
+.intuit-tiktok-feed::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 4px;
+}
+.intuit-tiktok-feed::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 4px;
+}
+
+/* The exact dimensions of a TikTok/Reels phone screen */
+.tiktok-card {
+    width: 280px; 
+    height: 498px; /* 9:16 aspect ratio */
+    border-radius: 12px; /* Smooth, modern corners */
+    overflow: hidden;
+    flex-shrink: 0; /* Prevents the grid from squishing the videos */
+    background-color: #111; /* Sleek dark background while loading */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds depth */
+}
+
+/* Ensures the video fills the phone card perfectly */
+.tiktok-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text column sizing for the Intuit layout */
+.intuit-text-col {
+    display: flex;
+    flex-direction: column;
+    width: 400px; /* Narrowed slightly so the 4 videos have more room */
+    flex-shrink: 0; 
+    gap: 20px;
+}
+
+/* ==========================================
+   INTUIT MOBILE OVERRIDES
+   ========================================== */
+@media screen and (max-width: 900px) {
+    .intuit-tiktok-feed {
+        /* On mobile, they snap to a horizontal swipeable feed! */
+        scroll-snap-type: x mandatory;
+        padding-bottom: 40px; 
+    }
+    .tiktok-card {
+        scroll-snap-align: center;
+        width: 80vw; /* Takes up most of the phone screen */
+        max-width: 350px;
+        height: auto;
+        aspect-ratio: 9/16;
     }
 }

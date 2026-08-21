@@ -11,10 +11,24 @@
     <!-- NAVIGATION -->
     <header class="navigation">
         <a href="index.html" class="portfolio-logo">
-            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="SUCHI Logo">
+            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Logo">
         </a>
-        <nav class="items">
-            <a href="about.html" class="about">about</a>
+        
+        <!-- The Hamburger Icon (Only shows on mobile) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links (Becomes the full-screen overlay on mobile) -->
+        <nav class="items" id="nav-menu">
+            <!-- The Close 'X' Button (Only shows on mobile) -->
+            <div class="close-btn" onclick="toggleMenu()">x</div>
+            
+            <a href="index.html" class="nav-link">work</a>
+            <a href="longform.html" class="nav-link">long form</a>
+            <a href="about.html" class="nav-link active">about</a>
         </nav>
     </header>
 
@@ -48,7 +62,7 @@
                                 June 2025 - August 2025<br><br>
                                 
                                 OKINA STUDIOS<br>
-                                Co-Founder & Production Director<br>
+                                Co-Founder & Creative Director<br>
                                 January 2026 - June 2026<br><br>
                                 
                                 ANABOLIC KITCHEN<br>
@@ -118,6 +132,21 @@
         <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
     </div>
 </footer>
+
+<!-- HAMBURGER MENU SCRIPT -->
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('nav-open');
+        
+        // This stops the background website from scrolling while the menu is open
+        if (navMenu.classList.contains('nav-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+</script>
 
 </body>
 </html>
