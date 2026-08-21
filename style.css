@@ -885,3 +885,43 @@ a {
         color: #828282;
     }
 }
+
+/* ==========================================
+   VERTICAL BRAND STACK (Homepage)
+   ========================================== */
+
+.brand-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px; /* Lots of breathing room between logos */
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Removes any default link underlining */
+    transition: transform 0.3s ease;
+}
+
+.brand-link:hover {
+    transform: scale(1.05); /* Very slight pop when hovered */
+}
+
+.brand-logo {
+    width: 140px; 
+    height: auto;
+    fill: #ffffff; /* Changed this to white so it shows up on your black background! */
+    margin-bottom: 12px; 
+}
+
+.brand-tag {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #666666; /* A subtle grey so it doesn't fight the logo */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
