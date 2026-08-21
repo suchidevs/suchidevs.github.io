@@ -911,9 +911,11 @@ a {
 }
 
 .brand-tag {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 0.85rem;
-    color: #666666; /* A subtle grey so it doesn't fight the logo */
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    font-family: 'Inter', sans-serif; /* Matches your site font */
+    font-weight: 200; /* Extremely thin weight to match the nav */
+    font-size: 15px; /* Matches the nav and footer size */
+    color: #828282; /* Matches the exact grey from your Figma file */
+    text-transform: lowercase; /* Matches your lowercase nav aesthetic */
+    letter-spacing: normal; /* Removes the stretched spacing */
+    margin-top: 15px; /* Pushes it down slightly from the logo */
 }
