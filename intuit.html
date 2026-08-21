@@ -85,19 +85,54 @@
     </div>
 </footer>
 
-<!-- HAMBURGER MENU SCRIPT -->
+<!-- HAMBURGER MENU & TIKTOK VIDEO SCRIPT -->
 <script>
+    // 1. Hamburger Menu Logic
     function toggleMenu() {
         const navMenu = document.getElementById('nav-menu');
         navMenu.classList.toggle('nav-open');
         
-        // This stops the background website from scrolling while the menu is open
         if (navMenu.classList.contains('nav-open')) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
         }
     }
+
+    // 2. TikTok Click-to-Play Logic
+    const tiktokVideos = document.querySelectorAll('.tiktok-card video');
+
+    tiktokVideos.forEach(video => {
+        // Change the cursor to a pointer so users know they can click it!
+        video.style.cursor = 'pointer';
+
+        video.addEventListener('click', function() {
+            // If the video is currently muted (meaning this is their first time clicking it)
+            if (this.muted) {
+                
+                // First, pause and mute all OTHER videos so audio doesn't clash
+                tiktokVideos.forEach(v => {
+                    if (v !== this) {
+                        v.muted = true;
+                        v.pause();
+                    }
+                });
+                
+                // Then, unmute this video, restart it from 0:00, and play it!
+                this.muted = false;
+                this.currentTime = 0;
+                this.play();
+                
+            } else {
+                // If it's already unmuted, clicking it again will just play/pause it like real TikTok
+                if (this.paused) {
+                    this.play();
+                } else {
+                    this.pause();
+                }
+            }
+        });
+    });
 </script>
 
 </body>
