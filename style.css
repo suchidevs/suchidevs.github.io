@@ -216,14 +216,6 @@ a {
     animation: interstellar-sweep 6s linear infinite;
 }
 
-/* When hovered, the animation stops and it snaps to crisp white */
-.section-heading:hover {
-    background: none;
-    -webkit-text-fill-color: #ffffff;
-    transition: 0.3s ease;
-    animation: none; 
-}
-
 /* ==========================================
    THE ANIMATION KEYFRAMES
    ========================================== */
