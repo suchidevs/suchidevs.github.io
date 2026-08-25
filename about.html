@@ -27,6 +27,7 @@
             <div class="close-btn" onclick="toggleMenu()">x</div>
             
             <a href="index.html" class="nav-link">work</a>
+            <a href="index.html#social" class="nav-link">social</a>
             <a href="longform.html" class="nav-link">long form</a>
             <a href="about.html" class="nav-link active">about</a>
         </nav>
@@ -145,6 +146,18 @@
         } else {
             document.body.style.overflow = '';
         }
+    }
+
+    // THE ULTRA-BULLETPROOF MENU CLOSER
+    // Automatically force-closes the menu and unlocks the screen when ANY link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            // Force it closed rather than toggling it
+            navMenu.classList.remove('nav-open');
+            document.body.style.overflow = '';
+        });
     }
 </script>
 
