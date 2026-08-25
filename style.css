@@ -38,19 +38,23 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 89px; /* Exact Figma spacing */
-    height: 120px; /* Sleeker height so it doesn't block the screen while scrolling */
+    padding: 0px 89px; 
+    height: 120px; 
 
-    /* THE GLASSMORPHISM MAGIC */
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.65); /* Dark, semi-transparent base */
-    backdrop-filter: blur(16px); /* The gorgeous Gaussian blur */
-    -webkit-backdrop-filter: blur(16px); /* Ensures it works perfectly on Apple/Safari */
     
-    /* Optional: A razor-thin glowing border on the bottom for an ultra-premium feel */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* 1. A soft gradient background that fades from dark at the top to invisible at the bottom */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    /* 2. The Gaussian Blur */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    
+    /* 3. THE MAGIC MASK: This forces the blur itself to slowly fade out into nothing! */
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
 /* Ensuring the logo scales nicely */
