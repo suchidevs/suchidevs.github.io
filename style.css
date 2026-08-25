@@ -929,10 +929,10 @@ a {
     transition: transform 0.3s ease;
 }
 
-/* Hover swaps the gentle float for an intense, energetic vibration */
+/* Hover swaps the gentle float for a deep, luxurious pulsing zoom */
 .brand-link:hover {
-    /* Triggers the new rapid-shake animation (0.1s is lightning fast!) */
-    animation: intense-vibrate 0.1s linear infinite; 
+    /* A smooth, slow 2.5s breathing effect */
+    animation: elegant-pulse 2.5s ease-in-out infinite; 
 }
 
 /* --- THE NEW GLOWING BOX --- */
@@ -1014,14 +1014,11 @@ a {
     100% { transform: rotate(360deg); }
 }
 
-/* The rapid 'teasing' vibration effect */
-@keyframes intense-vibrate {
-    0% { transform: scale(1.08) translate(0px, 0px) rotate(0deg); }
-    20% { transform: scale(1.08) translate(-1px, 2px) rotate(-1deg); }
-    40% { transform: scale(1.08) translate(2px, -1px) rotate(1deg); }
-    60% { transform: scale(1.08) translate(-2px, 1px) rotate(0deg); }
-    80% { transform: scale(1.08) translate(1px, -2px) rotate(-1deg); }
-    100% { transform: scale(1.08) translate(0px, 0px) rotate(0deg); }
+/* The high-end 'breathing' scale effect */
+@keyframes elegant-pulse {
+    0% { transform: scale(1.15); } /* Swells up to be noticeably larger */
+    50% { transform: scale(1.08); } /* Breathes out slightly */
+    100% { transform: scale(1.15); } /* Breathes back in */
 }
 
 /* ==========================================
