@@ -33,14 +33,24 @@ a {
 
 /* ==========================================
    NAVIGATION
-   Using your Figma flexbox spacing and colors
    ========================================== */
 .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 89px; /* Exact Figma spacing */
-    height: 248px;     /* Exact Figma height */
+    height: 120px; /* Sleeker height so it doesn't block the screen while scrolling */
+
+    /* THE GLASSMORPHISM MAGIC */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.65); /* Dark, semi-transparent base */
+    backdrop-filter: blur(16px); /* The gorgeous Gaussian blur */
+    -webkit-backdrop-filter: blur(16px); /* Ensures it works perfectly on Apple/Safari */
+    
+    /* Optional: A razor-thin glowing border on the bottom for an ultra-premium feel */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Ensuring the logo scales nicely */
@@ -84,7 +94,7 @@ a {
 
 /* This is how we stagger the middle column safely! */
 .micro-drama-preview-1 {
-    transform: translateY(150px);    
+    transform: translateY(150px);   
 }
 
 /* Make sure the videos fill the boxes perfectly without stretching */
