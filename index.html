@@ -132,15 +132,17 @@
             }
         }
 
-        // NEW: Automatically close the menu and unlock scrolling when ANY link is clicked!
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+        // THE ULTRA-BULLETPROOF MENU CLOSER
+        // Automatically force-closes the menu and unlocks the screen when ANY link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        for (let i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
                 const navMenu = document.getElementById('nav-menu');
-                if (navMenu.classList.contains('nav-open')) {
-                    toggleMenu(); 
-                }
+                // Force it closed rather than toggling it
+                navMenu.classList.remove('nav-open');
+                document.body.style.overflow = '';
             });
-        });
+        }
     </script>
 
 </body>
