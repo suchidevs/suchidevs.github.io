@@ -131,6 +131,16 @@
                 document.body.style.overflow = '';
             }
         }
+
+        // NEW: Automatically close the menu and unlock scrolling when ANY link is clicked!
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.getElementById('nav-menu');
+                if (navMenu.classList.contains('nav-open')) {
+                    toggleMenu(); 
+                }
+            });
+        });
     </script>
 
 </body>
