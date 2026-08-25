@@ -937,6 +937,12 @@ a {
     animation-play-state: paused; 
 }
 
+/* NEW: Once the outer link scales up (takes 0.5s), this starts the continuous pulse */
+.brand-link:hover .interactive-logo-box {
+    /* Starts at 0.5s so it waits for the balloon scale to finish first! */
+    animation: continuous-swell 3s ease-in-out 0.5s infinite;
+}
+
 /* --- THE NEW GLOWING BOX --- */
 .interactive-logo-box {
     position: relative;
@@ -949,6 +955,9 @@ a {
     background-color: rgba(25, 25, 25, 0.5); /* Very subtle dark fill */
     overflow: hidden; /* Keeps the glowing line trapped to the border */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    
+    /* NEW: Allows the box to transition smoothly if hover is removed mid-pulse */
+    transition: transform 0.5s ease;
 }
 
 /* 
@@ -1014,6 +1023,13 @@ a {
 @keyframes traveling-glow {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* The high-end 'breathing' scale effect that runs AFTER the balloon expansion */
+@keyframes continuous-swell {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); } /* Breathes out slightly */
+    100% { transform: scale(1); }
 }
 
 /* ==========================================
