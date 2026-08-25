@@ -926,13 +926,14 @@ a {
     text-decoration: none; 
     /* Gentle, infinite floating animation */
     animation: float 4s ease-in-out infinite;
-    /* Added a slow, butter-smooth 0.5s transition for when you hover */
-    transition: transform 0.5s ease;
+    /* Transition 'scale' directly instead of 'transform' */
+    transition: scale 0.5s ease;
 }
 
 /* Hover swells it up huge and smoothly, pausing the float */
 .brand-link:hover {
-    transform: scale(1.15); 
+    /* Use the standalone scale property so it doesn't fight the floating animation! */
+    scale: 1.15; 
     animation-play-state: paused; 
 }
 
