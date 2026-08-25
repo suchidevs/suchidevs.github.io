@@ -8,7 +8,7 @@
 </head>
 <body class="subpage">
 
-   <!-- NAVIGATION -->
+    <!-- NAVIGATION -->
     <header class="navigation">
         <a href="index.html" class="portfolio-logo">
             <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Gupta Logo">
@@ -27,6 +27,7 @@
             
             <!-- 'active' is on 'work' so people know where they are! -->
             <a href="index.html" class="nav-link active">work</a>
+            <a href="index.html#social" class="nav-link">social</a>
             <a href="longform.html" class="nav-link">long form</a>
             <a href="about.html" class="nav-link">about</a>
         </nav>
@@ -44,7 +45,7 @@
                 <video src="portfolioassets/OkinaStudios/metro-teaser.mp4" controls playsinline></video>
             </div>
             <div class="microdrama-card">
-                <img src="portfolioassets/OkinaStudios/okina-logo.webp" controls playsinline></img>
+                <img src="portfolioassets/OkinaStudios/okina-logo.webp">
             </div>
         </div>
 
@@ -79,6 +80,18 @@
         } else {
             document.body.style.overflow = '';
         }
+    }
+
+    // THE ULTRA-BULLETPROOF MENU CLOSER
+    // Automatically force-closes the menu and unlocks the screen when ANY link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            // Force it closed rather than toggling it
+            navMenu.classList.remove('nav-open');
+            document.body.style.overflow = '';
+        });
     }
 </script>
 
