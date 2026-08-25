@@ -27,6 +27,7 @@
             <div class="close-btn" onclick="toggleMenu()">x</div>
             
             <a href="index.html" class="nav-link active">work</a>
+            <a href="#social" class="nav-link">social</a>
             <a href="longform.html" class="nav-link">long form</a>
             <a href="about.html" class="nav-link">about</a>
         </nav>
@@ -38,96 +39,99 @@
          ========================================== -->
     <main>
         
-<!-- Replace your current preview container with this updated structure -->
-<div class="preview-container">
-    
-    <!-- LEFT COLUMN: Okina Studios -->
-    <a href="okina-studios.html" class="preview-box okina-studios-preview">
-        <video src="portfolioassets/OkinaStudios/okina-studios-preview.mp4" autoplay loop muted playsinline preload="auto"></video>
-        <div class="preview-overlay">
-            <span class="preview-title">Okina Studios</span>
+        <!-- The 3 Video Previews -->
+        <div class="preview-container">
+            
+            <!-- LEFT COLUMN: Okina Studios -->
+            <a href="okina-studios.html" class="preview-box okina-studios-preview">
+                <video src="portfolioassets/OkinaStudios/okina-studios-preview.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <div class="preview-overlay">
+                    <span class="preview-title">Okina Studios</span>
+                </div>
+            </a>
+            
+            <!-- MIDDLE COLUMN (Lowered): Microdramas -->
+            <a href="microdramas.html" class="preview-box micro-drama-preview-1">
+                <video src="portfolioassets/MicroDramas/micro-drama-preview-1.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <div class="preview-overlay">
+                    <span class="preview-title">Microdrama</span>
+                </div>
+            </a>
+            
+            <!-- RIGHT COLUMN: Anabolic Kitchen -->
+            <a href="anabolic-kitchen.html" class="preview-box anabolic-preview">
+                <video src="portfolioassets/Anabolic%20Kitchen/anabolic-preview-trimmed.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <div class="preview-overlay">
+                    <span class="preview-title">Anabolic Kitchen</span>
+                </div>
+            </a>
+
         </div>
-    </a>
-    
-    <!-- MIDDLE COLUMN (Lowered): Microdramas -->
-    <a href="microdramas.html" class="preview-box micro-drama-preview-1">
-        <video src="portfolioassets/MicroDramas/micro-drama-preview-1.mp4" autoplay loop muted playsinline preload="auto"></video>
-        <div class="preview-overlay">
-            <span class="preview-title">Microdrama</span>
-        </div>
-    </a>
-    
-    <!-- RIGHT COLUMN: Anabolic Kitchen -->
-    <a href="anabolic-kitchen.html" class="preview-box anabolic-preview">
-        <video src="portfolioassets/Anabolic%20Kitchen/anabolic-preview-trimmed.mp4" autoplay loop muted playsinline preload="auto"></video>
-        <div class="preview-overlay">
-            <span class="preview-title">Anabolic Kitchen</span>
-        </div>
-    </a>
 
-</div>
+        <!-- THE CINEMATIC SEPARATOR -->
+        <hr class="cinematic-line">
 
-<!-- THE CINEMATIC SEPARATOR -->
-    <hr class="cinematic-line">
-
-    <!-- THE GIANT TYPOGRAPHY -->
-    <!-- Changed to a div instead of a link, and updated to SOCIAL -->
-    <div class="section-heading">
-        SOCIAL
-    </div>
-    
-<!-- THE NEW VERTICAL BRAND STACK -->
-    <div class="brand-stack">
-        
-        <!-- 1. INTUIT (Top priority) -->
-        <a href="intuit.html" class="brand-link">
-            <div class="interactive-logo-box">
-                <img src="https://cdn.simpleicons.org/intuit/ffffff" class="brand-logo" alt="Intuit Logo" />
+        <!-- SOCIAL SECTION (Anchor Target) -->
+        <section id="social">
+            
+            <!-- THE GIANT TYPOGRAPHY -->
+            <div class="section-heading">
+                SOCIAL
             </div>
-            <span class="brand-tag">(Content Creation & Art Direction)</span>
-        </a>
+            
+            <!-- THE NEW VERTICAL BRAND STACK -->
+            <div class="brand-stack">
+                
+                <!-- 1. INTUIT (Top priority) -->
+                <a href="intuit.html" class="brand-link">
+                    <div class="interactive-logo-box">
+                        <img src="https://cdn.simpleicons.org/intuit/ffffff" class="brand-logo" alt="Intuit Logo" />
+                    </div>
+                    <span class="brand-tag">(Content Creation & Art Direction)</span>
+                </a>
 
-        <!-- 2. ANDROID (Middle) -->
-        <a href="android.html" class="brand-link">
-            <div class="interactive-logo-box">
-                <img src="https://cdn.simpleicons.org/android/ffffff" class="brand-logo" alt="Android Logo" />
+                <!-- 2. ANDROID (Middle) -->
+                <a href="android.html" class="brand-link">
+                    <div class="interactive-logo-box">
+                        <img src="https://cdn.simpleicons.org/android/ffffff" class="brand-logo" alt="Android Logo" />
+                    </div>
+                    <span class="brand-tag">(Commercial Production BTS)</span>
+                </a>
+
+                <!-- 3. SAMSUNG (Bottom) -->
+                <a href="samsung.html" class="brand-link">
+                    <div class="interactive-logo-box">
+                        <img src="https://cdn.simpleicons.org/samsung/ffffff" class="brand-logo" alt="Samsung Logo" />
+                    </div>
+                    <span class="brand-tag">(Commercial Production BTS)</span>
+                </a>
+
             </div>
-            <span class="brand-tag">(Commercial Production BTS)</span>
-        </a>
-
-        <!-- 3. SAMSUNG (Bottom) -->
-        <a href="samsung.html" class="brand-link">
-            <div class="interactive-logo-box">
-                <img src="https://cdn.simpleicons.org/samsung/ffffff" class="brand-logo" alt="Samsung Logo" />
-            </div>
-            <span class="brand-tag">(Commercial Production BTS)</span>
-        </a>
-
-    </div>
+        </section>
         
     </main>
 
-<!-- FOOTER -->
-<footer class="navigation-footer">
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
-    </div>
-</footer>
+    <!-- FOOTER -->
+    <footer class="navigation-footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
+        </div>
+    </footer>
 
-<!-- HAMBURGER MENU SCRIPT -->
-<script>
-    function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.toggle('nav-open');
-        
-        // This stops the background website from scrolling while the menu is open
-        if (navMenu.classList.contains('nav-open')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+    <!-- HAMBURGER MENU SCRIPT -->
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('nav-open');
+            
+            // This stops the background website from scrolling while the menu is open
+            if (navMenu.classList.contains('nav-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
 </html>
