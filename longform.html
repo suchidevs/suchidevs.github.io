@@ -9,22 +9,18 @@
 </head>
 <body class="dark-theme">
 
-    <!-- NAVIGATION -->
     <header class="navigation">
         <a href="index.html" class="portfolio-logo">
-            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Gupta Logo">
+            <img src="portfolioassets/portfolio-logo.svg" alt="Suchi Gupta Logo" style="width: 160px; height: auto;">
         </a>
         
-        <!-- The Hamburger Icon (Only shows on mobile) -->
         <div class="hamburger-menu" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <!-- Navigation Links (Becomes the full-screen overlay on mobile) -->
         <nav class="items" id="nav-menu">
-            <!-- The Close 'X' Button (Only shows on mobile) -->
             <div class="close-btn" onclick="toggleMenu()">x</div>
             
             <a href="index.html" class="nav-link">work</a>
@@ -34,25 +30,19 @@
         </nav>
     </header>
 
-    <!-- LONG FORM GALLERY -->
     <main class="longform-gallery">
         
-        <!-- GUILTY OF LOVE -->
         <section class="film-section">
             <div class="film-text">
                 <h2 class="film-title">GUILTY OF LOVE</h2>
                 <p class="film-role">Sound Designer</p>
             </div>
-            <!-- The 'onclick' triggers the Javascript at the bottom to play the video -->
             <div class="anamorphic-container" onclick="playVideo(this)">
-                <!-- Corrected relative path to the local MP4 loop -->
                 <video src="portfolioassets/LongForm/guilty-loop.mov" autoplay loop muted playsinline class="loop-preview"></video>
-                <!-- Clean Vimeo embed link -->
                 <iframe src="https://player.vimeo.com/video/1218370439?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" class="vimeo-embed"></iframe>
             </div>
         </section>
 
-        <!-- ON BIRTHDAYS WE CELEBRATE -->
         <section class="film-section">
             <div class="film-text">
                 <h2 class="film-title">ON BIRTHDAYS WE CELEBRATE</h2>
@@ -64,7 +54,6 @@
             </div>
         </section>
 
-        <!-- TIGER -->
         <section class="film-section">
             <div class="film-text">
                 <h2 class="film-title">TIGER</h2>
@@ -78,14 +67,12 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="navigation-footer">
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
         </div>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS -->
     <script>
         // 1. Vimeo Click-to-Play Function
         function playVideo(container) {
