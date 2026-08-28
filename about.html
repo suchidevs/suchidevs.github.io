@@ -111,3 +111,44 @@
             <div class="about-profile-image">
                 <img src="portfolioassets/about-me-profile.jpg" alt="Suchi Portrait">
             </div>
+
+        </div>
+
+    </main>
+
+<!-- FOOTER -->
+<footer class="navigation-footer">
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
+    </div>
+</footer>
+
+<!-- HAMBURGER MENU SCRIPT -->
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('nav-open');
+        
+        // This stops the background website from scrolling while the menu is open
+        if (navMenu.classList.contains('nav-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // THE ULTRA-BULLETPROOF MENU CLOSER
+    // Automatically force-closes the menu and unlocks the screen when ANY link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            // Force it closed rather than toggling it
+            navMenu.classList.remove('nav-open');
+            document.body.style.overflow = '';
+        });
+    }
+</script>
+
+</body>
+</html>
