@@ -9,22 +9,18 @@
 </head>
 <body class="subpage">
 
-    <!-- NAVIGATION -->
     <header class="navigation">
         <a href="index.html" class="portfolio-logo">
-            <img src="portfolioassets/LogoDesign/portfolio-logo.png" alt="Suchi Logo">
+            <img src="portfolioassets/portfolio-logo.svg" alt="Suchi Gupta Logo" style="width: 160px; height: auto;">
         </a>
         
-        <!-- The Hamburger Icon (Only shows on mobile) -->
         <div class="hamburger-menu" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <!-- Navigation Links (Becomes the full-screen overlay on mobile) -->
         <nav class="items" id="nav-menu">
-            <!-- The Close 'X' Button (Only shows on mobile) -->
             <div class="close-btn" onclick="toggleMenu()">x</div>
             
             <a href="index.html" class="nav-link">work</a>
@@ -34,15 +30,12 @@
         </nav>
     </header>
 
-    <!-- MAIN CONTENT (About Page Layout) -->
     <main class="about-main">
         
         <div class="about-layout">
             
-            <!-- LEFT COLUMN: All Text Content -->
             <div class="about-text-content">
                 
-                <!-- Top Section: Origin Story -->
                 <section class="about-section origin-story">
                     <h2 class="about-heading">ORIGIN STORY</h2>
                     <p class="about-desc">
@@ -51,10 +44,8 @@
                     </p>
                 </section>
 
-                <!-- Bottom Section: The Split Layout for Lists -->
                 <div class="about-details-grid">
                     
-                    <!-- Left Side of Split: Experience & Education -->
                     <div class="details-left-col">
                         <section class="about-section">
                             <h2 class="about-heading">EXPERIENCE</h2>
@@ -91,7 +82,6 @@
                         </section>
                     </div>
 
-                    <!-- Right Side of Split: Recognition -->
                     <div class="details-right-col">
                         <section class="about-section">
                             <h2 class="about-heading">RECOGNITION</h2>
@@ -118,49 +108,6 @@
 
             </div>
 
-            <!-- RIGHT COLUMN: Profile Picture -->
             <div class="about-profile-image">
-                <!-- Swap this URL for wherever you saved that amazing red portrait -->
                 <img src="portfolioassets/about-me-profile.jpg" alt="Suchi Portrait">
             </div>
-
-        </div>
-
-    </main>
-
-<!-- FOOTER -->
-<footer class="navigation-footer">
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/sucheta-gupta-6736a7224/" target="_blank" class="linkedin-text">linkedin</a>
-    </div>
-</footer>
-
-<!-- HAMBURGER MENU SCRIPT -->
-<script>
-    function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.toggle('nav-open');
-        
-        // This stops the background website from scrolling while the menu is open
-        if (navMenu.classList.contains('nav-open')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-
-    // THE ULTRA-BULLETPROOF MENU CLOSER
-    // Automatically force-closes the menu and unlocks the screen when ANY link is clicked
-    const navLinks = document.querySelectorAll('.nav-link');
-    for (let i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener('click', function() {
-            const navMenu = document.getElementById('nav-menu');
-            // Force it closed rather than toggling it
-            navMenu.classList.remove('nav-open');
-            document.body.style.overflow = '';
-        });
-    }
-</script>
-
-</body>
-</html>
