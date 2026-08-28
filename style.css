@@ -1105,3 +1105,7 @@ a {
         aspect-ratio: 9/16;
     }
 }
+
+.portfolio-logo img {
+    margin-left: -8px; 
+}
